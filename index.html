@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛒 Lista de Compras</h1>
+            <p>Organize suas compras de forma dinâmica</p>
+        </div>
+
+        <!-- SEÇÃO 1: Adicionar Itens -->
+        <div class="section add-section">
+            <h2>➕ Adicionar Itens</h2>
+            <div class="input-section">
+                <input 
+                    type="text" 
+                    id="itemInput" 
+                    placeholder="Digite o item que deseja adicionar..."
+                    autocomplete="off"
+                >
+                <button id="addBtn" class="btn-add">Adicionar</button>
+            </div>
+            <div class="meta-section">
+                <input
+                    type="number"
+                    id="quantityInput"
+                    class="quantity-input"
+                    min="1"
+                    value="1"
+                    placeholder="Quantidade"
+                >
+                <select id="unitSelect" class="unit-select">
+                    <option value="unidades">Unidades</option>
+                    <option value="gramas">Gramas</option>
+                    <option value="kilos">Kilos</option>
+                    <option value="litros">Litros</option>
+                    <option value="pacotes">Pacotes</option>
+                </select>
+            </div>
+            <div class="sort-section">
+                <label for="sortSelect">Ordenar por:</label>
+                <select id="sortSelect" class="sort-select">
+                    <option value="date-asc">Data de Adição (Mais recentes)</option>
+                    <option value="date-desc">Data de Adição (Mais antigos)</option>
+                    <option value="alpha-asc">Alfabética (A-Z)</option>
+                    <option value="alpha-desc">Alfabética (Z-A)</option>
+                    <option value="completed-last">Comprados por Último</option>
+                    <option value="completed-first">Não Comprados Primeiro</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2: Compras Pendentes -->
+        <div class="section purchases-section">
+            <div class="section-header">
+                <h2>🛒 Compras</h2>
+                <span id="pendingCount" class="count-badge">0</span>
+            </div>
+            <ul id="pendingList" class="shopping-list">
+                <!-- Itens não comprados -->
+            </ul>
+            <div id="noPendingMessage" class="empty-section-message">
+                <p>✓ Nenhum item pendente!</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3: Comprados -->
+        <div class="section completed-section">
+            <div class="section-header">
+                <h2>✓ Comprados</h2>
+                <span id="completedCount" class="count-badge">0</span>
+            </div>
+            <ul id="completedList" class="shopping-list completed-list">
+                <!-- Itens comprados -->
+            </ul>
+            <div id="noCompletedMessage" class="empty-section-message">
+                <p>Nenhum item comprado ainda.</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO: Ações Gerais -->
+        <div class="actions-section">
+            <button id="clearBtn" class="btn-clear">Limpar Tudo</button>
+            <span id="itemCount" class="item-count">0 itens no total</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
